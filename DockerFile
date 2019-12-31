@@ -1,15 +1,17 @@
 # /usr/src/nodejs/Dockerfile
 FROM node:10.0
 
-# 创建目录
-RUN mkdir -p /usr/src/nodejs/
-
 # 定位到工作目录
-WORKDIR /usr/src/nodejs/
+WORKDIR /usr/src/app/
 
 # 复制包配置文件
-COPY package.json /usr/src/app/package.json
-
-RUN cd /usr/src/app/
+COPY package*.json ./
 
 RUN npm i
+
+# bundle app source
+COPY . .
+
+EXPOSE 7777
+
+CMD [ "node", "index.js" ]
