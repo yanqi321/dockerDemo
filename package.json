@@ -1,5 +1,5 @@
 {
-  "name": "webdemo",
+  "name": "docker_demo",
   "version": "1.0.0",
   "description": "docker web demo",
   "main": "index.js",
